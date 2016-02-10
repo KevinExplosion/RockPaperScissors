@@ -50,10 +50,28 @@ public class RockPaperScissorsTest extends FluentTest {
     assertEquals(one, testApp.checkWinner("Paper", "Rock"));
   }
 
+  @Test
+  public void rootTest() {
+      goTo("http://localhost:4567/roshambo");
+      assertThat(pageSource()).contains("Play Rock Paper Scissors!");
+  }
 
-  // @Test
-  // public void rootTest() {
-  //     goTo("http://localhost:4567/");
-  //     assertThat(pageSource()).contains("Leap year detector");
-  // }
+  @Test
+  public void formTest() {
+      goTo("http://localhost:4567/roshambo");
+      find("#player1Rock").click();
+      find("#player2Rock").click();
+      submit("#submitChoice");
+      assertThat(pageSource()).contains("Tie");
+  }
+
+  @Test
+  public void winTest() {
+    goTo("http://localhost:4567/roshambo");
+    find("#player1Scissors").click();
+    find("#player2Rock").click();
+    submit("#submitChoice");
+    assertThat(pageSource()).contains("Player 2 wins");
+  }
+
 }
