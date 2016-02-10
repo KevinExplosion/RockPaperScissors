@@ -26,6 +26,10 @@ public class RockPaperScissors {
       String p2 = "Player Two";
       String throw1 = request.queryParams("player1Choice");
       String throw2 = request.queryParams("player2Choice");
+      if (throw2.equals("Random")){
+        throw2 = computerThrow();
+        p2 = "HAL 9000";
+      }
       Integer winner = RockPaperScissors.checkWinner(throw1, throw2);
       if (winner == 1) {
         model.put("winner", String.format(displayWinner, p1, p1, throw1, p2, throw2));

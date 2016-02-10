@@ -80,4 +80,13 @@ public class RockPaperScissorsTest extends FluentTest {
     assertThat(pageSource()).contains("Player Two is the winner!");
   }
 
+  @Test
+  public void computerTest() {
+    goTo("http://localhost:4567/roshambo");
+    find("#player1Scissors").click();
+    submit("#ai");
+    assertThat(pageSource()).contains("HAL 9000");
+  }
+
+
 }

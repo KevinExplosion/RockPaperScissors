@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RockPaperScissorsTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-02-10T21:53:13" hostname="epicodus-67.local" time="0.415">
+<testsuite name="RockPaperScissorsTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-02-10T22:14:51" hostname="epicodus-67.local" time="0.483">
   <properties/>
   <testcase name="checkWinner_playersChooseSameThrow_tie" classname="RockPaperScissorsTest" time="0.003"/>
+  <testcase name="computerTest" classname="RockPaperScissorsTest" time="0.346"/>
   <testcase name="checkWinner_player2RockBeatsScissors_two" classname="RockPaperScissorsTest" time="0.0"/>
-  <testcase name="checkWinner_player1PaperBeatsRock_one" classname="RockPaperScissorsTest" time="0.0"/>
-  <testcase name="rootTest" classname="RockPaperScissorsTest" time="0.28"/>
-  <testcase name="checkWinner_player1ScissorsBeatsPaper_one" classname="RockPaperScissorsTest" time="0.0"/>
-  <testcase name="formTest" classname="RockPaperScissorsTest" time="0.067"/>
+  <testcase name="checkWinner_player1PaperBeatsRock_one" classname="RockPaperScissorsTest" time="0.001"/>
+  <testcase name="rootTest" classname="RockPaperScissorsTest" time="0.015"/>
+  <testcase name="checkWinner_player1ScissorsBeatsPaper_one" classname="RockPaperScissorsTest" time="0.001"/>
+  <testcase name="formTest" classname="RockPaperScissorsTest" time="0.024"/>
   <testcase name="checkWinner_player1RockBeatsScissors_one" classname="RockPaperScissorsTest" time="0.0"/>
-  <testcase name="computerThrow_ShouldBeAString_true" classname="RockPaperScissorsTest" time="0.001"/>
-  <testcase name="winTest" classname="RockPaperScissorsTest" time="0.024"/>
+  <testcase name="computerThrow_ShouldBeAString_true" classname="RockPaperScissorsTest" time="0.0"/>
+  <testcase name="winTest" classname="RockPaperScissorsTest" time="0.039"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Thread-4] INFO spark.webserver.SparkServer - == Spark has ignited ...
 [Thread-4] INFO spark.webserver.SparkServer - >> Listening on 0.0.0.0:4567
 [Thread-4] INFO org.eclipse.jetty.server.Server - jetty-9.0.2.v20130417
-[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@364b05d5{HTTP/1.1}{0.0.0.0:4567}
+[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@53ab14c9{HTTP/1.1}{0.0.0.0:4567}
 [Test worker] INFO spark.webserver.SparkServer - >>> Spark shutting down ...
-[Test worker] INFO org.eclipse.jetty.server.Server - Graceful shutdown org.eclipse.jetty.server.Server@37acb0df by 
-[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@364b05d5{HTTP/1.1}{0.0.0.0:4567}
+[Test worker] INFO org.eclipse.jetty.server.Server - Graceful shutdown org.eclipse.jetty.server.Server@4fcf7298 by 
+[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@53ab14c9{HTTP/1.1}{0.0.0.0:4567}
 [Test worker] INFO spark.webserver.SparkServer - done
 ]]></system-err>
 </testsuite>
