@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Random;
+import java.io.Console;
 
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -26,6 +27,7 @@ public class RockPaperScissors {
       String p2 = "Player Two";
       String throw1 = request.queryParams("player1Choice");
       String throw2 = request.queryParams("player2Choice");
+      System.out.println(throw2);
       if (throw2.equals("Random")){
         throw2 = computerThrow();
         p2 = "HAL 9000";
