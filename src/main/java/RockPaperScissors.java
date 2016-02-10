@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Random;
 
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -19,16 +20,19 @@ public class RockPaperScissors {
 
     get("/winner", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-
-      String player1 = request.queryParams("player1Choice");
-      String player2 = request.queryParams("player2Choice");
-      Integer winner = RockPaperScissors.checkWinner(player1, player2);
+      String displayWinner = "%s is the winner! %s threw %s and %s threw %s.";
+      String displayTie = "It's a tie! %s threw %s and %s threw %s.";
+      String p1 = "Player One";
+      String p2 = "Player Two";
+      String throw1 = request.queryParams("player1Choice");
+      String throw2 = request.queryParams("player2Choice");
+      Integer winner = RockPaperScissors.checkWinner(throw1, throw2);
       if (winner == 1) {
-        model.put("winner", "Player 1 wins");
+        model.put("winner", String.format(displayWinner, p1, p1, throw1, p2, throw2));
       } else if (winner == 2) {
-        model.put("winner", "Player 2 wins");
+        model.put("winner", String.format(displayWinner, p2, p1, throw1, p2, throw2));
       } else if (winner == 3) {
-        model.put("winner", "Tie");
+        model.put("winner", String.format(displayTie, p1, throw1, p2, throw2));
       } else if (winner == 4) {
         model.put("winner", "ERROR");
       }
@@ -62,4 +66,23 @@ public class RockPaperScissors {
     }
     return 4;
   }
+
+  public static String computerThrow (){
+    Random myRandomGenerator = new Random();
+
+    Integer randomNumber = myRandomGenerator.nextInt(3);
+    String randomThrow = "";
+
+    if (randomNumber == 0) {
+      randomThrow = "Rock";
+    } else if (randomNumber == 1) {
+      randomThrow = "Scissors";
+    } else if (randomNumber == 2) {
+      randomThrow = "Paper";
+    } else {
+      randomThrow = "error";
+    }
+    return randomThrow;
+  }
+
 }

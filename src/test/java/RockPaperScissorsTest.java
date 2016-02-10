@@ -51,6 +51,12 @@ public class RockPaperScissorsTest extends FluentTest {
   }
 
   @Test
+  public void computerThrow_ShouldBeAString_true(){
+    String randomThrow = RockPaperScissors.computerThrow();
+    assertEquals(true, randomThrow instanceof String);
+  }
+
+  @Test
   public void rootTest() {
       goTo("http://localhost:4567/roshambo");
       assertThat(pageSource()).contains("Play Rock Paper Scissors!");
@@ -62,7 +68,7 @@ public class RockPaperScissorsTest extends FluentTest {
       find("#player1Rock").click();
       find("#player2Rock").click();
       submit("#submitChoice");
-      assertThat(pageSource()).contains("Tie");
+      assertThat(pageSource()).contains("It's a tie!");
   }
 
   @Test
@@ -71,7 +77,7 @@ public class RockPaperScissorsTest extends FluentTest {
     find("#player1Scissors").click();
     find("#player2Rock").click();
     submit("#submitChoice");
-    assertThat(pageSource()).contains("Player 2 wins");
+    assertThat(pageSource()).contains("Player Two is the winner!");
   }
 
 }
