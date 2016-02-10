@@ -23,11 +23,31 @@ public class RockPaperScissorsTest extends FluentTest {
     Integer three = 3;
     assertEquals(three, testApp.checkWinner("Rock", "Rock"));
   }
+
   @Test
-  public void checkWinner_rockBeatsScissors_true() {
+  public void checkWinner_player1RockBeatsScissors_one() {
     RockPaperScissors testApp = new RockPaperScissors();
     Integer one = 1;
     assertEquals(one, testApp.checkWinner("Rock", "Scissors"));
+  }
+  @Test
+  public void checkWinner_player2RockBeatsScissors_two() {
+    RockPaperScissors testApp = new RockPaperScissors();
+    Integer two = 2;
+    assertEquals(two, testApp.checkWinner("Scissors", "Rock"));
+  }
+  @Test
+  public void checkWinner_player1ScissorsBeatsPaper_one() {
+    RockPaperScissors testApp = new RockPaperScissors();
+    Integer one = 1;
+    assertEquals(one, testApp.checkWinner("Scissors", "Paper"));
+  }
+
+  @Test
+  public void checkWinner_player1PaperBeatsRock_one() {
+    RockPaperScissors testApp = new RockPaperScissors();
+    Integer one = 1;
+    assertEquals(one, testApp.checkWinner("Paper", "Rock"));
   }
 
 
