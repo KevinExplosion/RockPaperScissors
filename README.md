@@ -6,7 +6,7 @@
 
 ## Description
 
-This web app allows two players to play a round of rock, paper, scissors and returns the result.
+This web app allows two players to play a round of rock, paper, scissors and returns the result. Alternately, a player can pit their wits against a randomly generated computer result.
 
 ## Technologies Used
 
